@@ -41,6 +41,7 @@ pub use frame_support::{
 
 /// Import the template pallet.
 pub use pallet_template;
+pub use pallet_counter;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -272,6 +273,10 @@ impl pallet_template::Trait for Runtime {
 	type Event = Event;
 }
 
+impl pallet_counter::Trait for Runtime {
+	type Event = Event;
+}
+
 parameter_types! {
     // Choose a fee that incentivizes desireable behavior.
     pub const NickReservationFee: u128 = 100;
@@ -348,6 +353,7 @@ construct_runtime!(
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
 		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		Counter: pallet_counter::{Module, Call, Storage, Event<T>},
 		// Sandbox Additional pallets
 		Nicks: pallet_nicks::{Module, Call, Storage, Event<T>},
 		Contracts: pallet_contracts::{Module, Call, Config, Storage, Event<T>},
