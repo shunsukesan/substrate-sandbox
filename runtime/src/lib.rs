@@ -331,6 +331,10 @@ impl pallet_contracts::Trait for Runtime {
     type WeightPrice = pallet_transaction_payment::Module<Self>;
 }
 
+/// Configure the template pallet in pallets/betting_demo.
+impl betting_demo::Trait for Runtime {}
+
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
 	pub enum Runtime where
@@ -351,6 +355,7 @@ construct_runtime!(
 		// Sandbox Additional pallets
 		Nicks: pallet_nicks::{Module, Call, Storage, Event<T>},
 		Contracts: pallet_contracts::{Module, Call, Config, Storage, Event<T>},
+		Demo: betting_demo::{Module, Call, Storage},
 	}
 );
 
