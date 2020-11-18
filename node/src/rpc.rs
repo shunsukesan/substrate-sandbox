@@ -7,13 +7,12 @@
 
 use std::sync::Arc;
 
-use node_template_runtime::{opaque::Block, AccountId, Balance, Index};
+use node_template_runtime::{opaque::Block, AccountId, Balance, Index, BlockNumber};
 use sp_api::ProvideRuntimeApi;
 use sp_blockchain::{Error as BlockChainError, HeaderMetadata, HeaderBackend};
 use sp_block_builder::BlockBuilder;
 pub use sc_rpc_api::DenyUnsafe;
 use sp_transaction_pool::TransactionPool;
-use node_template_runtime::{opaque::Block, AccountId, Balance, Index, BlockNumber};
 use pallet_contracts_rpc::{Contracts, ContractsApi};
 
 
