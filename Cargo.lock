@@ -3282,6 +3282,7 @@ dependencies = [
  "pallet-contracts",
  "pallet-contracts-primitives",
  "pallet-contracts-rpc-runtime-api",
+ "pallet-counter",
  "pallet-grandpa",
  "pallet-nicks",
  "pallet-randomness-collective-flip",
@@ -3568,6 +3569,18 @@ dependencies = [
  "sp-api",
  "sp-runtime",
  "sp-std",
+]
+
+[[package]]
+name = "pallet-counter"
+version = "2.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
 ]
 
 [[package]]
